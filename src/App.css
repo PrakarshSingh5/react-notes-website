@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  
+  background-color: #DCE2F0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -34,7 +34,7 @@ code {
   justify-content: space-between;
 }
 .dark-mode{
-  background-color: rgb(8,23,36);
+  background-color: #000000;
   
 }
 .dark-mode h1{
@@ -53,7 +53,7 @@ code {
 }
 
 .note{
-  background-color:#DEB992 ;
+  background-color:#124559;
   /* margin-bottom: 10px; */
   border-radius: 10px;
   padding: 1rem;
@@ -62,17 +62,33 @@ code {
   flex-direction: column;
   justify-content: space-between;
   white-space: pre-wrap;
+  color:white;
+}
+.nute{
+  background-color:#50586C ;
+  /* margin-bottom: 10px; */
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: pre-wrap;
+  color: white;
 }
 .note_footer{
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+.note_footer button{
+  margin-left: 15px;
+}
 .note textarea{
   white-space: pre-wrap;
   background: transparent;
   border: none;
-  color: #fff;
+  color:black;
   resize: none;
   font-size: 18px;
 }
@@ -85,6 +101,7 @@ code {
 .note_save{
   background-color: grey;
   transition: 0.1s ease-in-out;
+ 
   border: 1.5px solid #fff;
   border-radius: 10px;
   color: #fff;

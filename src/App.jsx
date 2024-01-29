@@ -11,7 +11,7 @@ const App = () => {
     <div className={`${darkMode && 'dark-mode'}`}>
          <div className='main'>
             <Header handleToggleDarkMode={setDarkMode}/>
-            <Notes/>
+            <Notes darkMode={darkMode}/>
          </div>
     </div>
     

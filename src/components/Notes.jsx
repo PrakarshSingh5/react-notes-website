@@ -4,8 +4,7 @@ import Note from './Note'
 
 import {v4 as uuid} from 'uuid'
 
-
-const Notes = () => {
+const Notes = ({darkMode}) => {
   const [notes,setNotes]=useState([]);
  const [editToggle, setEditToggle]=useState(null);
 
@@ -31,7 +30,8 @@ const Notes = () => {
     setNotes((prevNotes)=>[
       ...prevNotes,{
         id:uuid(),
-        text:inputtext
+        text:inputtext,
+        
       }
     ])
   }
@@ -45,24 +45,26 @@ const deleteHandler=(id)=>{
    setNotes(newNotes)
 }
  useEffect(()=>{
-    window.localStorage.setItem("Notes",JSON.stringify(notes))
+    window.localStorage.setItem("Notes",JSON.stringify(notes));
  },[notes])
   return (
     <div className='notes'>
       {
         notes.map((note)=>(
           editToggle===note.id ?
-<CreateNote inputtext={inputtext} 
-      setInputText={setInputText}
-      saveHandler={saveHandler}/>
+      <CreateNote  key={note.id} inputtext={inputtext} 
+          setInputText={setInputText}
+          saveHandler={saveHandler}/>
 
           :
           <Note
-          key={note.id}
           id={note.id}
+         key={note.id}
           text={note.text}
+          date={note.date}
           editHandler={editHandler}
           deleteHandler={deleteHandler}
+          darkMode={darkMode}
           >
 
           </Note>
